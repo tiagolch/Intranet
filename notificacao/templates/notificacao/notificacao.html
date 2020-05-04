@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+{% include '../partials/_nav.html' %}
+
+{% if notificacao %}
+{% for aviso in notificacao %}
+
+<section class="container margin">
+  <div class="container text-center margin">
+    <div class="container-fluid text-center">
+      <div class="row content">
+        <div class="col-sm-1 sidenav">
+
+        </div>
+        <div class="col-sm-10 text-left jumbotron margin">
+          <h2>{{aviso.categoria}}</h2>
+          <p>{{aviso.descricao}}</p>
+          <hr>
+          <h6>Prazo: {{aviso.data_prazo}}</h6>
+          <p>Solucionado: {{aviso.data_concluido}}</p>
+        </div>
+        <div class="col-sm-1 sidenav">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% endfor %}
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+<!--<section class="container container-fluid">-->
+<!--  <div class="container">-->
+<!--    <div class="row">-->
+
+<!--      {% if notificacao %}-->
+<!--        {% for aviso in notificacao %}-->
+<!--      <div class="col-12 col-sm-6 col-lg-4">-->
+<!--                    <div class="single-best-receipe-area mb-30">-->
+
+<!--          <div class="card" style="width: 18rem;">-->
+<!--            <div class="card-body">-->
+<!--              <h5 class="card-title">{{aviso.categoria}}</h5>-->
+<!--              <p class="card-text">{{aviso.descricao}}</p>-->
+<!--            </div>-->
+<!--            <ul class="list-group list-group-flush">-->
+<!--&lt;!&ndash;              <li class="list-group-item">{{aviso.data_criacao}}</li>&ndash;&gt;-->
+<!--              <li class="list-group-item">Prazo: {{aviso.data_prazo}}</li>-->
+
+<!--              <li class="list-group-item">Solucionado: {{aviso.data_concluido}}</li>-->
+
+<!--            </ul>-->
+<!--          </div>-->
+<!--                    </div>-->
+<!--      </div>-->
+<!--        {% endfor %}-->
+<!--      {% endif %}-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  -->
+<!--</section>-->
+
+
+
+
+{% include '../partials/_footer.html' %}
+{% endblock %}
