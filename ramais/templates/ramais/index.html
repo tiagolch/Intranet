@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+
+    {% block conteudo %}
+    {% include '../partials/_nav.html' %}
+<section class="container-fluid margin">
+    <form  method="GET" class="form-inline my-2 my-lg-0">{% csrf_token %}
+        <input class="form-control mr-sm-2 left" type="text" name="buscar" id="buscar" placeholder="Buscar" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" id="btn-busca" type="submit">Buscar</button>
+    </form>
+</section>
+
+<section class="container-fluid margin">
+        <div class="table-responsive-sm">
+            <table class="table table-xl table-striped">
+                <thead class="thead-dark">
+
+                    <tr>
+                    <th scope="col">RAMAL</th>
+                    <th scope="col">NOME</th>
+                    <th scope="col">SOBRE NOME</th>
+                    <th scope="col">SETOR</th>
+                    <th scope="col">CELULAR</th>
+                    <th scope="col">EMAIL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        {% if core %}
+                        {% for ramal in core %}
+                    <tr>
+                    <th scope="row" id="th">{{ramal.ramal}}</th>
+                    <td>{{ramal.nome}}</td>
+                    <td>{{ramal.sobreNome}}</td>
+                    <td>{{ramal.setor}}</td>
+                    <td>{{ramal.celular}}</td>
+                    <td><a href="mailto:{{ramal.email}}">{{ramal.email}}</a></td>
+                    </tr>
+                        {% endfor %}
+                        {% endif %}
+                  </tbody>
+            </table>
+        </div>
+      </section>
+
+    {% include '../partials/_footer.html' %}
+    {% endblock %}
