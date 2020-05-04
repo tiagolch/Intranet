@@ -34,8 +34,11 @@ class Notificacao(models.Model):
     def get_data_prazo(self):
         return self.data_prazo.strftime( '%d/%m/%Y %H:%M' )
 
-    def get_data_input_conclusao(self):
-        return self.data_concluido.strftime('%Y-%m-%dT%H:%M')
+    # def get_data_input_concluido(self):
+    #     return self.data_concluido.strftime('%Y-%m-%dT%H:%M')
+
+    def get_data_concluido(self):
+        return self.data_concluido.strftime( '%d/%m/%Y %H:%M' )
 
 
     class Meta:

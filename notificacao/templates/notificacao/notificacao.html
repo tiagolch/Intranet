@@ -13,12 +13,16 @@
         <div class="col-sm-1 sidenav">
 
         </div>
-        <div class="col-sm-10 text-left jumbotron margin">
+        <div class="col-sm-10 text-left jumbotron margin" id="notificacao">
+          <p>Data de publicação: {{aviso.get_data_criacao}}</p>
+          <hr>
           <h2>{{aviso.categoria}}</h2>
           <p>{{aviso.descricao}}</p>
           <hr>
-          <h6>Prazo: {{aviso.data_prazo}}</h6>
-          <p>Solucionado: {{aviso.data_concluido}}</p>
+          <h6 id="prazo">Prazo: {{aviso.get_data_prazo}}</h6>
+          {% if aviso.get_data_concluido != 'None' %}
+          <h5 id="solucionado">Solucionado: {{aviso.get_data_concluido}}</h5>
+          {% endif %}
         </div>
         <div class="col-sm-1 sidenav">
 
