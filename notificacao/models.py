@@ -17,7 +17,7 @@ class Categoria(models.Model):
 class Notificacao(models.Model):
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
     descricao = models.TextField(max_length=300, null=False, blank=False)
-    data_criacao = models.DateTimeField(auto_now=True,verbose_name='Data do Registro')
+    data_criacao = models.DateTimeField(auto_now_add=True,verbose_name='Data do Registro')
     data_prazo = models.DateTimeField(verbose_name='Prazo')
     data_concluido = models.DateTimeField(blank=True, null=True, verbose_name='Conclusão')
     ativo = models.BooleanField(default=True)
