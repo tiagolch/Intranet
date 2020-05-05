@@ -27,7 +27,7 @@ SECRET_KEY = '*q!((@%*4)h19a#fo391=n24q6ll22)!!(vj+xpc*ygy-pjb(s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['git.heroku.com/app-intranet.git','localhost']
 
 
 # Application definition
