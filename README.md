@@ -2,6 +2,8 @@
 
 Este é um projeto simples em desenvolvimento, a ideia é criar um espaço que integre melhor os profissionais em seu ambiente de trabalho.
 
+http://app-intranet.herokuapp.com/
+
 ### Pré-requisitos
 
 Ter instalado Python3 e pip e
