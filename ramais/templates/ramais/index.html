@@ -11,7 +11,7 @@
 </section>
 
 <section class="container-fluid margin">
-        <div class="table-responsive-sm">
+        <div class="table-responsive-lg">
             <table class="table table-xl table-striped">
                 <thead class="thead-dark">
 
@@ -29,11 +29,11 @@
                         {% for ramal in core %}
                     <tr>
                     <th scope="row" id="th">{{ramal.ramal}}</th>
-                    <td>{{ramal.nome}}</td>
-                    <td>{{ramal.sobreNome}}</td>
-                    <td>{{ramal.setor}}</td>
+                    <td>{{ramal.nome | upper}}</td>
+                    <td>{{ramal.sobreNome | upper}}</td>
+                    <td>{{ramal.setor | upper}}</td>
                     <td>{{ramal.celular}}</td>
-                    <td><a href="mailto:{{ramal.email}}">{{ramal.email}}</a></td>
+                    <td><a href="mailto:{{ramal.email}}">{{ramal.email | lower}}</a></td>
                     </tr>
                         {% endfor %}
                         {% endif %}
