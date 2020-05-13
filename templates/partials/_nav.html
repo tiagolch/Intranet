@@ -12,9 +12,19 @@
             <li class="nav-item active">
               <a class="nav-link" href="/admin" target="_blank">Administrador <span class="sr-only">(current)</span></a>
             </li>
-              <li class="nav-item active">
+            <li class="nav-item active">
               <a class="nav-link" href="/notificacao" target="_blank">Notificações <span class="sr-only">(current)</span></a>
             </li>
+
+                {% if request.user.is_authenticated %}
+              <li class="nav-item active">
+                <a class="nav-link">Olá, {{ request.user.username }}<span class="sr-only">(current)</span></a>
+                <li class="nav-item active"><a href="{% url 'deslogar' %}" class="nav-link">Logout</a></li>
+                {% else %}
+                <a href="{% url 'logar' %}" class="nav-link">Login<span class="sr-only">(current)</span></a>
+                {% endif %}
+              </li>
+
           </ul>
         </div>
     </nav>

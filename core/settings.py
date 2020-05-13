@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '*q!((@%*4)h19a#fo391=n24q6ll22)!!(vj+xpc*ygy-pjb(s'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['git.heroku.com/app-intranet.git','localhost']
 
@@ -41,7 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ramais',
     'notificacao',
+    'user',
 ]
+
+LOGIN_URL =  '/user/logar/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
