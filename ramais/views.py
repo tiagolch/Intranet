@@ -1,13 +1,19 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
-from .models import Funcionario
+from .models import Funcionario, Setor
 
 
 def index(request):
     busca = request.GET.get( 'buscar' )
     if busca:
         result = Funcionario.objects.filter( nome__icontains=busca, ativo=True )
-        result = {
+        result1 = {
+            'core': result
+        }
+
+    if busca:
+        result = Setor.objects.filter( setor__icontains=busca )
+        result2 = {
             'core': result
         }
 
