@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'ramais',
     'notificacao',
     'user',
+    'faturamento',
 ]
 
 LOGIN_URL =  '/user/logar/'
@@ -120,7 +121,7 @@ USE_L10N = True
 
 USE_TZ = False
 
-DATE_INPUT_FORMATS = ['%d/%m/%Y']
+DATE_INPUT_FORMATS = ('%d-%m-%Y','%Y-%m-%d')
 
 
 # Static files (CSS, JavaScript, Images)
