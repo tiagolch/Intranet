@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'ramais',
     'notificacao',
     'user',
+    'baseConhecimento', 
 ]
 
 LOGIN_URL =  '/user/logar/'
