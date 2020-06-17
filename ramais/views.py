@@ -7,13 +7,7 @@ def index(request):
     busca = request.GET.get( 'buscar' )
     if busca:
         result = Funcionario.objects.filter( nome__icontains=busca, ativo=True )
-        result1 = {
-            'core': result
-        }
-
-    if busca:
-        result = Setor.objects.filter( setor__icontains=busca )
-        result2 = {
+        result = {
             'core': result
         }
 
