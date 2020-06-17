@@ -21,4 +21,5 @@ urlpatterns = [
     path( '', include( 'ramais.urls' ) ),
     path( 'notificacao/', include( 'notificacao.urls' ) ),
     path( 'user/', include( 'user.urls' ) ),
+    path('base/', include('baseConhecimento.urls'))
 ]
