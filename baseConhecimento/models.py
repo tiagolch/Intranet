@@ -24,7 +24,7 @@ class base(models.Model):
     ativo = models.BooleanField(default=True, verbose_name='Ativo')
 
     def __str__(self):
-        return self.titulo
+        return self.titulo+' '+str(self.usuario)+' '+str(self.categoria)
 
     def get_data_criacao(self):
         return self.data_criacao.strftime('%d/%m/%Y')
